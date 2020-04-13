@@ -148,7 +148,7 @@ def reqister():
     return render_template('register.html', title='Регистрация', form=form)
 
 print('Всё нормально.')
-
+print('Всё плохо.')
 
 def main():
     db_session.global_init("db/blogs.sqlite")
