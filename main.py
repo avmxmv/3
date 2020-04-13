@@ -149,6 +149,7 @@ def reqister():
 
 print('Всё нормально.')
 print('Всё плохо.')
+print('Всё хорошо.')
 
 def main():
     db_session.global_init("db/blogs.sqlite")
