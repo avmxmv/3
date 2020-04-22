@@ -23,7 +23,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-danger">
+<header>
+    <nav class="navbar navbar-light bg-danger">
         <a class="navbar-brand" href="/"><h3>Veder.net</h3></a>
         {% if current_user.is_authenticated %}
         <a style="background-color: #ffffff; border: 2px solid #000000;
@@ -37,7 +38,8 @@
             <a class="btn btn-success" href="/login">Войти</a>
         </p>
         {% endif %}
-</nav>
+    </nav>
+</header>
 <main role="main" class="container">
     {% block content %}
      {% endblock %}
