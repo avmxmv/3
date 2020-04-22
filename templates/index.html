@@ -1,25 +1,24 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1>Ну привет</h1>
-{% for item in items %}
-<div class="col-md6 border rounded">
-    <h2>{{item.title}}</h2>
-    <div>
-        {{item.content}}
-    </div>
-    <div>
-        Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
-    </div>
-    {% if current_user.is_authenticated and current_user == item.user %}
-        <div>
-            <a href="/items/{{ item.id }}" class="btn btn-warning">Изменить</a>
-            <a href="/items_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
-        </div>
-    {% endif %}
-</div>
-{% endfor %}
+<h1>Автомобильный ряд</h1>
+
 {% if current_user.is_authenticated %}
-    <a href="items" class="btn btn-secondary">Добавить автомобиль</a>
+    <div class="col px-md-2 p-3"><a href="items" class="btn btn-secondary">Добавить автомобиль</a></div>
 {% endif %}
-{% endblock %} 
+{% endblock %}
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    {% for item in items %}-->
+<!--    <div class="p-1">-->
+<!--        <div class="col px-md-1 border border-warning">-->
+<!--            <div class="mx-auto" style="width: 200px;"><h2>{{item.title}}</h2></div>-->
+<!--            <img style="height:300px; weight:300px;" src={{item.photo}}>-->
+<!--            <p class="text-justify text-break">{{item.content}}</p>-->
+<!--            <a href="/items/{{ item.id }}" class="btn btn-warning">Изменить</a>-->
+<!--            <a href="/items_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    {% endfor %}-->
+<!--  </div>-->
+<!--</div>-->

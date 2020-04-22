@@ -1,16 +1,16 @@
-from flask import Flask, render_template, redirect, request, make_response, session, abort
-from flask_wtf import FlaskForm
+from flask import Flask, render_template, redirect, request, abort, session
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
+from flask_wtf import FlaskForm
+from wtforms import IntegerField
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
 from wtforms.validators import DataRequired
 from data import db_session, items, users
-from flask_wtf import FlaskForm
-from flask import Flask, render_template, redirect, request, abort
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
 login_manager = LoginManager()
 login_manager.init_app(app)
+number = 1
 
 
 @login_manager.user_loader
@@ -41,6 +41,7 @@ class ItemsForm(FlaskForm):
     submit = SubmitField('Применить')
 
 
+
 @app.route('/logout')
 def logout():
     logout_user()
@@ -50,25 +51,29 @@ def logout():
 @app.route('/items', methods=['GET', 'POST'])
 @login_required
 def add_items():
+    global number
     form = ItemsForm()
-    if form.validate_on_submit():
-        sessions = db_session.create_session()
-        item = items.Items()
-        item.title = form.title.data
-        item.content = form.content.data
-        current_user.items.append(item)
-        sessions.merge(current_user)
-        sessions.commit()
-        return redirect('/')
-    return render_template('items.html', title='Добавление автомобиля', form=form)
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save('static/images/' + str(number) + '.png')
+        if form.validate_on_submit():
+            sessions = db_session.create_session()
+            item = items.Items()
+            item.title = form.title.data
+            item.content = form.content.data
+            item.photo = '/static/images/' + str(number) + '.png'
+            number += 1
+            sessions.add(item)
+            sessions.commit()
+            return redirect('/')
+    return render_template('items.html', title='Добавление товара', form=form)
 
 
 @app.route('/items_delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def items_delete(id):
     sessions = db_session.create_session()
-    item = sessions.query(items.Items).filter(items.Items.id == id,
-                                              items.Items.user == current_user).first()
+    item = sessions.query(items.Items).filter(items.Items.id == id).first()
     if item:
         sessions.delete(item)
         sessions.commit()
@@ -83,8 +88,7 @@ def edit_items(id):
     form = ItemsForm()
     if request.method == 'GET':
         sessions = db_session.create_session()
-        item = sessions.query(items.Items).filter(items.Items.id == id,
-                                                  items.Items.user == current_user).first()
+        item = sessions.query(items.Items).filter(items.Items.id == id).first()
         if item:
             form.title.data = item.title
             form.content.data = item.content
@@ -92,8 +96,7 @@ def edit_items(id):
             abort(404)
     if form.validate_on_submit():
         sessions = db_session.create_session()
-        item = sessions.query(items.Items).filter(items.Items.id == id,
-                                                  items.Items.user == current_user).first()
+        item = sessions.query(items.Items).filter(items.Items.id == id).first()
         if item:
             item.title = form.title.data
             item.content = form.content.data
@@ -124,6 +127,13 @@ def index():
     return render_template("index.html", items=item)
 
 
+class ChangePasswordForm(FlaskForm):
+    old_password = PasswordField('Старый пароль', validators=[DataRequired()])
+    new_password = PasswordField('Новый пароль', validators=[DataRequired()])
+    again_password = PasswordField('Повторите новый пароль', validators=[DataRequired()])
+    submit = SubmitField('Сменить пароль')
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     form = RegisterForm()
@@ -149,7 +159,10 @@ def reqister():
 
 
 def main():
+    global number
     db_session.global_init("db/blogs.sqlite")
+    sessions = db_session.create_session()
+    number += len(list(sessions.query(items.Items)))
     app.run()
 
 
