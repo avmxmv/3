@@ -36,9 +36,9 @@ class LoginForm(FlaskForm):
 
 
 class ItemsForm(FlaskForm):
-    title = StringField('Заголовок', validators=[DataRequired()])
-    content = TextAreaField('Содержание')
-    submit = SubmitField('Применить')
+    title = StringField('Название автомобиля', validators=[DataRequired()])
+    content = TextAreaField('Информация')
+    submit = SubmitField('Добавить')
 
 
 
@@ -65,8 +65,8 @@ def add_items():
             number += 1
             sessions.add(item)
             sessions.commit()
-            return redirect('/')
-    return render_template('items.html', title='Добавление товара', form=form)
+            return redirect('/cars')
+    return render_template('items.html', title='Добавление автомобиля', form=form)
 
 
 @app.route('/items_delete/<int:id>', methods=['GET', 'POST'])
@@ -79,7 +79,7 @@ def items_delete(id):
         sessions.commit()
     else:
         abort(404)
-    return redirect('/')
+    return redirect('/cars')
 
 
 @app.route('/items/<int:id>', methods=['GET', 'POST'])
@@ -101,7 +101,7 @@ def edit_items(id):
             item.title = form.title.data
             item.content = form.content.data
             sessions.commit()
-            return redirect('/')
+            return redirect('/cars')
         else:
             abort(404)
     return render_template('items.html', title='Редактирование автомобиля', form=form)
@@ -121,6 +121,11 @@ def login():
 
 
 @app.route("/")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/cars")
 def index():
     sessions = db_session.create_session()
     item = sessions.query(items.Items)

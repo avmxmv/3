@@ -18,10 +18,10 @@
         {{ form.content.label }} <br>
         {{ form.content(class="form-control") }} <br>
         {% for error in form.content.errors %}
-            <p class="alert alert-danger" role="alert">
-                {{ error }}
-            </p>
-        {% endfor %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
     </p>
     <div class="form-group">
         <input type="file" class="form-control-file" id="photo" name="file">
