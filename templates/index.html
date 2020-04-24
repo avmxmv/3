@@ -8,13 +8,16 @@
   <div class="row">
     {% for item in items %}
     <div class="col-sm-6">
-      <div class="card" style="width: 30rem;">
-        <img class="img-fluid" src={{item.photo}}>
+      <div class="card mb-4" style="width: 30rem; border-radius: 10px;">
+        <img class="img-fluid" style="border-radius: 10px;" src={{item.photo}}>
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
-          <p class="card-text">{{item.content}}</p>
+          <div class="prokrutka mb-2" style="border-radius: 10px;">
+            <p class="card-text">{{item.content}}</p>
+          </div>
           <a href="/items/{{ item.id }}" class="btn btn-warning">Изменить</a>
           <a href="/items_delete/{{ item.id }}" class="btn btn-danger">Удалить</a>
+          <a href="/info_cars/{{ item.id }}" class="btn btn-info">Узнать больше</a>
         </div>
       </div>
     </div>
@@ -22,3 +25,4 @@
   </div>
 </div>
 {% endblock %}
+<!--style="border-radius: 0 500px; border: 5px #cfc solid; box-shadow: 0 0 10px #444;" - красивыя картинка-->

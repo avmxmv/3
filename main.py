@@ -132,6 +132,13 @@ def index():
     return render_template("index.html", items=item)
 
 
+@app.route('/info_cars/<int:id>', methods=['GET', 'POST'])
+def info_cars(id):
+    sessions = db_session.create_session()
+    item = sessions.query(items.Items).get(id)
+    return render_template("infocars.html", item=item)
+
+
 class ChangePasswordForm(FlaskForm):
     old_password = PasswordField('Старый пароль', validators=[DataRequired()])
     new_password = PasswordField('Новый пароль', validators=[DataRequired()])
