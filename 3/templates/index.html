@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container"><h1>Our cars</h1></div>
+{% if current_user.is_authenticated %}
+    <div class="container"><div class="col px-md-2 p-3"><a href="items" class="btn btn-secondary">Добавить автомобиль</a></div></div>
+{% endif %}
+<div class="container">
+  <div class="row">
+    {% for item in items %}
+    <div class="col-sm-6">
+      <div class="card mb-4" style="width: 30rem; border-radius: 10px;">
+        <img class="img-fluid" style="border-radius: 10px;" src={{item.photo}}>
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <div class="prokrutka mb-2" style="border-radius: 10px;">
+            <p class="card-text">{{item.content}}</p>
+          </div>
+          <a href="/info_cars/{{ item.id }}" class="btn btn-outline-info">Узнать больше</a>
+          <a href="/items/{{ item.id }}" class="btn btn-outline-warning">Изменить</a>
+          <a href="/items_delete/{{ item.id }}" class="btn btn-outline-danger">Удалить</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+<!--style="border-radius: 0 500px; border: 5px #cfc solid; box-shadow: 0 0 10px #444;" - красивыя картинка-->
