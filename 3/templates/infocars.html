@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<main role="main">
-    <img class="d-block w-75" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>
-</main>
+<!--<div>-->
+<!--    <img class="d-block w-75" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>-->
+<!--</div>-->
+<div>
+  <div class="row">
+    <div class="col-9">
+      <img class="d-block w-100" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>
+    </div>
+    <div class="col-3">
+      <h5>{{item.title}}</h5>
+      <h5>{{item.price}}</h5>
+      <h5>{{item.maxspeed}}</h5>
+      <h5>{{item.boost}}</h5>
+      <h5>{{item.power}}</h5>
+      <h5>{{item.powerdensity}}</h5>
+      <h5>{{item.size}}</h5>
+      <h5>{{item.weight}}</h5>
+    </div>
+  </div>
+</div>
 {% endblock %}
