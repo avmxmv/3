@@ -206,8 +206,5 @@ def main():
     app.run()
 
 
-print(1)
-
-
 if __name__ == '__main__':
     main()
