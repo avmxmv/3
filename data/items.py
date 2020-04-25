@@ -18,6 +18,6 @@ class Items(SqlAlchemyBase, SerializerMixin):
     powerdensity = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     size = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     weight = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
-    photo = sqlalchemy.Column(sqlalchemy.VARCHAR, nullable=True)
+    photo = sqlalchemy.Column(sqlalchemy.VARCHAR, nullable=True, default='/static/photo/tesla.png')
     user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
     user = orm.relation('User')

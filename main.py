@@ -1,13 +1,16 @@
 from flask import Flask, render_template, redirect, request, abort, session
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from flask_wtf import FlaskForm
+from flask_restful import Api
 from wtforms import IntegerField
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
 from wtforms.validators import DataRequired
 from data import db_session, items, users
+from api_item import ItemListResource, ItemResource
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
+api = Api(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 number = 1
@@ -157,13 +160,17 @@ def home():
 def index():
     sessions = db_session.create_session()
     item = sessions.query(items.Items)
-    return render_template("index.html", items=item)
+    search = request.args.get('s', default="", type=str)
+    if search:
+        return render_template("index.html", items=item, search=search.lower())
+    return render_template("index.html", items=item, search="")
 
 
 @app.route('/info_cars/<int:id>', methods=['GET', 'POST'])
 def info_cars(id):
     sessions = db_session.create_session()
     item = sessions.query(items.Items).get(id)
+
     return render_template("infocars.html", item=item)
 
 
@@ -202,6 +209,8 @@ def main():
     global number
     db_session.global_init("db/blogs.sqlite")
     sessions = db_session.create_session()
+    api.add_resource(ItemListResource, '/api/v2/item')
+    api.add_resource(ItemResource, '/api/v2/item/<int:item_id>')
     number += len(list(sessions.query(items.Items)))
     app.run()
 
