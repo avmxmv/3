@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect, request, abort, session
-from flask_login import LoginManager, login_user, logout_user, current_user, login_required
+from flask import Flask, render_template, redirect, request, abort
+from flask_login import LoginManager, login_user, logout_user, login_required
 from flask_wtf import FlaskForm
 from flask_restful import Api
 from wtforms import IntegerField
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
 from wtforms.validators import DataRequired
+
 from data import db_session, items, users
 from api_item import ItemListResource, ItemResource
 
@@ -49,7 +50,6 @@ class ItemsForm(FlaskForm):
     size = TextAreaField('Объём двигателя см^3')
     weight = IntegerField('Вес автомобиля кг')
     submit = SubmitField('Добавить')
-
 
 
 @app.route('/logout')
