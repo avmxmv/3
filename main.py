@@ -38,6 +38,13 @@ class LoginForm(FlaskForm):
 class ItemsForm(FlaskForm):
     title = StringField('Название автомобиля', validators=[DataRequired()])
     content = TextAreaField('Информация')
+    price = IntegerField('Цена руб')
+    maxspeed = IntegerField('Максимальная скорость км/ч')
+    boost = TextAreaField('Разгон до 100км/ч секунды')
+    power = IntegerField('Мощность л.c.')
+    powerdensity = IntegerField('Удельная мощность л.c./т')
+    size = TextAreaField('Объём двигателя см^3')
+    weight = IntegerField('Вес автомобиля кг')
     submit = SubmitField('Добавить')
 
 
@@ -61,6 +68,13 @@ def add_items():
             item = items.Items()
             item.title = form.title.data
             item.content = form.content.data
+            item.price = form.price.data
+            item.maxspeed = form.maxspeed.data
+            item.boost = form.boost.data
+            item.power = form.power.data
+            item.powerdensity = form.powerdensity.data
+            item.size = form.size.data
+            item.weight = form.weight.data
             item.photo = '/static/images/' + str(number) + '.png'
             number += 1
             sessions.add(item)
@@ -92,6 +106,13 @@ def edit_items(id):
         if item:
             form.title.data = item.title
             form.content.data = item.content
+            form.price.data = item.price
+            form.maxspeed.data = item.maxspeed
+            form.boost.data = item.boost
+            form.power.data = item.power
+            form.powerdensity.data = item.powerdensity
+            form.size.data = item.size
+            form.weight.data = item.weight
         else:
             abort(404)
     if form.validate_on_submit():
@@ -100,6 +121,13 @@ def edit_items(id):
         if item:
             item.title = form.title.data
             item.content = form.content.data
+            item.price = form.price.data
+            item.maxspeed = form.maxspeed.data
+            item.boost = form.boost.data
+            item.power = form.power.data
+            item.powerdensity = form.powerdensity.data
+            item.size = form.size.data
+            item.weight = form.weight.data
             sessions.commit()
             return redirect('/cars')
         else:
@@ -176,6 +204,9 @@ def main():
     sessions = db_session.create_session()
     number += len(list(sessions.query(items.Items)))
     app.run()
+
+
+print(1)
 
 
 if __name__ == '__main__':
