@@ -47,7 +47,7 @@ class ItemsForm(FlaskForm):
     boost = TextAreaField('Разгон до 100км/ч секунды')
     power = IntegerField('Мощность л.c.')
     powerdensity = IntegerField('Удельная мощность л.c./т')
-    size = TextAreaField('Объём двигателя см^3')
+    size = TextAreaField('Объём двигателя см³')
     weight = IntegerField('Вес автомобиля кг')
     submit = SubmitField('Добавить')
 

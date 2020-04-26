@@ -9,21 +9,30 @@
       <img class="d-block w-100" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>
     </div>
     <div class="col-3">
-      <h5>{{item.title}}</h5>
-      <br>
-      <h5>{{item.price}}</h5>
-      <br>
-      <h5>{{item.maxspeed}}</h5>
-      <br>
-      <h5>{{item.boost}}</h5>
-      <br>
-      <h5>{{item.power}}</h5>
-      <br>
-      <h5>{{item.powerdensity}}</h5>
-      <br>
-      <h5>{{item.size}}</h5>
-      <br>
-      <h5>{{item.weight}}</h5>
+      <div class="text-center mt-2">
+        <h1>{{item.title}}</h1>
+      </div>
+      <div>
+        <h5>Цена: {{item.price}} руб</h5>
+      </div>
+      <div>
+        <h5>Максимальная скорость: {{item.maxspeed}} км/ч</h5>
+      </div>
+      <div>
+        <h5>Разгон до 100 км/ч: {{item.boost}} сек</h5>
+      </div>
+      <div>
+        <h5>Мощность: {{item.power}} л.с.</h5>
+      </div>
+      <div>
+        <h5>Удельная мощность: {{item.powerdensity}} л.с./т</h5>
+      </div>
+      <div>
+        <h5>Объем двигателя: {{item.size}} см³</h5>
+      </div>
+      <div>
+        <h5>Вес автомобиля: {{item.weight}} кг</h5>
+      </div>
     </div>
   </div>
 </div>
