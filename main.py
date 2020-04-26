@@ -156,6 +156,11 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/team")
+def team():
+    return render_template("team.html")
+
+
 @app.route("/cars")
 def index():
     sessions = db_session.create_session()
@@ -170,8 +175,14 @@ def index():
 def info_cars(id):
     sessions = db_session.create_session()
     item = sessions.query(items.Items).get(id)
-
     return render_template("infocars.html", item=item)
+
+
+@app.route('/buy/<int:id>', methods=['GET', 'POST'])
+def buy(id):
+    sessions = db_session.create_session()
+    item = sessions.query(items.Items).get(id)
+    return render_template("buy.html", item=item)
 
 
 class ChangePasswordForm(FlaskForm):

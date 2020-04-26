@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-2 mb-4">Оформление заказа</h1>
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list"
+                   data-toggle="list" href="#list-home" role="tab" aria-controls="home">Info about
+                    the car</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list"
+                   data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Point of
+                    receiving</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list"
+                   data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Payment</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                     aria-labelledby="list-home-list">
+                    <h2 class="text-center mb-5">Проверьте пожалуйста выбранную модель</h2>
+                    <h3>Вами выбран автомобиль: {{item.title}}</h3>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel"
+                     aria-labelledby="list-profile-list">
+                    <h3 class="text-center mb-5">Выберите пункт доставки автомобиля</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios"
+                               id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Rote platz, Красная пл., Москва, 109012
+                            <a style="color: #9370D8;"
+                               href="https://www.google.ru/maps/@55.7539806,37.6200563,17.43z"
+                               target="_blank">Узнать где это</a>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios"
+                               id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Apple Park, Апл-Парк-уэй, Купертино, Калифорния, США
+                            <a style="color: #9370D8;"
+                               href="https://www.google.ru/maps/@37.3347273,-122.0148069,15.83z"
+                               target="_blank">Узнать где это</a>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios"
+                               id="exampleRadios3" value="option3">
+                        <label class="form-check-label" for="exampleRadios3">
+                            Императорский дворец, Токио, Япония
+                            <a style="color: #9370D8;"
+                               href="https://www.google.ru/maps/@35.6800878,139.7573003,16.26z"
+                               target="_blank">Узнать где это</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel"
+                     aria-labelledby="list-messages-list">
+                    <h2 class="text-center mb-4">Оплата</h2>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Имя пользователя</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Номер карты</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup1"
+                                   placeholder="0000-0000-0000-0000">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Срок действия карты</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup2"
+                                   placeholder="00/00">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Код проверки подлинности карты</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup3"
+                                   placeholder="000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

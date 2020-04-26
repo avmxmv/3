@@ -1,39 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<!--<div>-->
-<!--    <img class="d-block w-75" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>-->
-<!--</div>-->
 <div>
-  <div class="row">
-    <div class="col-9">
-      <img class="d-block w-100" style="border-radius: 0 500px; border: 5px #9370D8 solid; box-shadow: 0 0 10px #444;" src={{item.photo}}>
+    <div class="row">
+        <div class="col-9">
+            <img class="d-block w-100"
+                 style="border-radius: 0 500px; border: 5px #9370D8 solid;
+                 box-shadow: 0 0 10px #444;"
+                 src={{item.photo}}>
+        </div>
+        <div class="col-3">
+            <div class="text-center mt-2">
+                <h1>{{item.title}}</h1>
+            </div>
+            <div>
+                <h5>Цена: {{item.price}} руб</h5>
+                <h5>Максимальная скорость: {{item.maxspeed}} км/ч</h5>
+                <h5>Разгон до 100 км/ч: {{item.boost}} сек</h5>
+                <h5>Мощность: {{item.power}} л.с.</h5>
+                <h5>Удельная мощность: {{item.powerdensity}} л.с./т</h5>
+                <h5>Объем двигателя: {{item.size}} см³</h5>
+                <h5>Вес автомобиля: {{item.weight}} кг</h5>
+            </div>
+            {% if current_user.is_authenticated %}
+            <div>
+                <a href="/buy/{{ item.id }}" class="btn" style="background: #DC143C; color: #000000">Оформить заказать</a>
+            </div>
+            {% endif %}
+        </div>
     </div>
-    <div class="col-3">
-      <div class="text-center mt-2">
-        <h1>{{item.title}}</h1>
-      </div>
-      <div>
-        <h5>Цена: {{item.price}} руб</h5>
-      </div>
-      <div>
-        <h5>Максимальная скорость: {{item.maxspeed}} км/ч</h5>
-      </div>
-      <div>
-        <h5>Разгон до 100 км/ч: {{item.boost}} сек</h5>
-      </div>
-      <div>
-        <h5>Мощность: {{item.power}} л.с.</h5>
-      </div>
-      <div>
-        <h5>Удельная мощность: {{item.powerdensity}} л.с./т</h5>
-      </div>
-      <div>
-        <h5>Объем двигателя: {{item.size}} см³</h5>
-      </div>
-      <div>
-        <h5>Вес автомобиля: {{item.weight}} кг</h5>
-      </div>
-    </div>
-  </div>
 </div>
 {% endblock %}
