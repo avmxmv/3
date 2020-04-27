@@ -3,7 +3,7 @@
 <div class="container pt-2">
     <h1>Our cars</h1>
 </div>
-{% if current_user.is_authenticated %}
+{% if current_user.id == 1 %}
 <div class="container">
     <div class="col px-md-2 mb-3 p-2">
         <a href="items" class="btn btn-secondary">Добавить автомобиль</a>
@@ -28,8 +28,10 @@
                     </div>
                     <a href="/info_cars/{{ item.id }}" class="btn btn-outline-info">Узнать
                         больше</a>
-                    <a href="/items/{{ item.id }}" class="btn btn-outline-warning">Изменить</a>
-                    <a href="/items_delete/{{ item.id }}" class="btn btn-outline-danger">Удалить</a>
+                    {% if current_user.id == 1 %}
+                        <a href="/items/{{ item.id }}" class="btn btn-outline-warning">Изменить</a>
+                        <a href="/items_delete/{{ item.id }}" class="btn btn-outline-danger">Удалить</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

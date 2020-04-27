@@ -1,6 +1,6 @@
 from requests import get, delete, post
 
-print(get('http://localhost:5000/api/v2/item/1').json())  # Получение 5 товара
+print(get('http://localhost:5000/api/v2/item/1').json())  # Получение 1 товара
 print(post('http://localhost:5000/api/v2/item', json={'id': 41,
                                                       'title': 'Машина',
                                                       'content': 'Какая-то машинка',

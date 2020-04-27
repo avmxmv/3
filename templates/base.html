@@ -9,29 +9,7 @@
           crossorigin="anonymous">
     <link rel="shortcut icon" href="/static/photo/logo.png">
     <title>Best cars</title>
-    <style>
-    .prokrutka {
-        height: 100px; /* высота нашего блока */
-        width: 27.5rem; /* ширина нашего блока */
-        background: #fff; /* цвет фона, белый */
-        border: 1px solid #C1C1C1; /* размер и цвет границы блока */
-        overflow-y: scroll; /* прокрутка по вертикали */
-        }
-    html, body {
-        height: 100%;
-    }
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-    .content {
-        flex: 1 0 auto;
-    }
-    .footer {
-        flex-shrink: 0;
-    }
-
-    </style>
+    <link rel="stylesheet" href="../../static/style/application.css">
 </head>
 
 <body>
@@ -75,7 +53,7 @@
                 </form>
             </li>
             <li class="nav-item mt-1"><a class="nav-link" href="/logout" style="color: #9370D8">
-                {{current_user.name}}</a></li>
+                {{current_user.nickname}}</a></li>
         </ul>
         {% else %}
         <ul class="navbar-nav">

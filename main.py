@@ -3,7 +3,8 @@ from flask_login import LoginManager, login_user, logout_user, login_required
 from flask_wtf import FlaskForm
 from flask_restful import Api
 from wtforms import IntegerField
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
+from wtforms import SelectField, StringField, PasswordField, SubmitField, TextAreaField, \
+    BooleanField
 from wtforms.validators import DataRequired
 
 from data import db_session, items, users
@@ -27,8 +28,11 @@ class RegisterForm(FlaskForm):
     email = StringField('Почта', validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     password_again = PasswordField('Повторите пароль', validators=[DataRequired()])
-    name = StringField('Имя пользователя', validators=[DataRequired()])
-    about = TextAreaField("Немного о себе")
+    nickname = StringField('Имя пользователя', validators=[DataRequired()])
+    name = StringField('Имя', validators=[DataRequired()])
+    secondname = StringField('Фамилия', validators=[DataRequired()])
+    age = StringField('Возраст', validators=[DataRequired()])
+    gender = SelectField("Пол", validators=[DataRequired()], choices=[('0', 'М'), ('1', "Ж")])
     submit = SubmitField('Зарегистрироваться')
 
 
@@ -50,6 +54,19 @@ class ItemsForm(FlaskForm):
     size = TextAreaField('Объём двигателя см³')
     weight = IntegerField('Вес автомобиля кг')
     submit = SubmitField('Добавить')
+
+
+class EditItemsForm(FlaskForm):
+    title = StringField('Название автомобиля', validators=[DataRequired()])
+    content = TextAreaField('Информация')
+    price = IntegerField('Цена руб')
+    maxspeed = IntegerField('Максимальная скорость км/ч')
+    boost = TextAreaField('Разгон до 100км/ч секунды')
+    power = IntegerField('Мощность л.c.')
+    powerdensity = IntegerField('Удельная мощность л.c./т')
+    size = TextAreaField('Объём двигателя см³')
+    weight = IntegerField('Вес автомобиля кг')
+    submit = SubmitField('Изменить')
 
 
 @app.route('/logout')
@@ -102,7 +119,7 @@ def items_delete(id):
 @app.route('/items/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_items(id):
-    form = ItemsForm()
+    form = EditItemsForm()
     if request.method == 'GET':
         sessions = db_session.create_session()
         item = sessions.query(items.Items).filter(items.Items.id == id).first()
@@ -135,7 +152,7 @@ def edit_items(id):
             return redirect('/cars')
         else:
             abort(404)
-    return render_template('items.html', title='Редактирование автомобиля', form=form)
+    return render_template('edit.html', title='Редактирование автомобиля', form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -159,6 +176,11 @@ def home():
 @app.route("/team")
 def team():
     return render_template("team.html")
+
+
+@app.route("/end")
+def end():
+    return render_template("end.html")
 
 
 @app.route("/cars")
@@ -196,24 +218,86 @@ class ChangePasswordForm(FlaskForm):
 def reqister():
     form = RegisterForm()
     if form.validate_on_submit():
+        f = password(form.password.data)
+        if f != 'OK':
+            return render_template('register.html',
+                                   title='Регистрация',
+                                   form=form, email_error="OK", nickname_error="OK",
+                                   password_again_error="OK",
+                                   password_error=f, age_error='OK')
         if form.password.data != form.password_again.data:
             return render_template('register.html', title='Регистрация',
-                                   form=form,
-                                   message="Пароли не совпадают")
+                                   form=form, email_error="OK", nickname_error="OK",
+                                   password_error="OK",
+                                   password_again_error="Пароли не совпадают", age_error='OK')
+        db_session.global_init('db/blogs.sqlite')
         sessions = db_session.create_session()
         if sessions.query(users.User).filter(users.User.email == form.email.data).first():
             return render_template('register.html', title='Регистрация',
-                                   form=form,
-                                   message="Такой пользователь уже есть")
+                                   form=form, password_error="OK", nickname_error="OK",
+                                   again_password_error="OK",
+                                   email_error="Такой пользователь уже есть")
+        if sessions.query(users.User).filter(users.User.nickname == form.nickname.data).first():
+            return render_template('register.html', title='Регистрация',
+                                   form=form, password_error="OK", password_again_error="OK",
+                                   nickname_error="Данное имя пользователя уже занято",
+                                   email_error="OK", age_error='OK')
+        if int(form.age.data) < 18:
+            return render_template('register.html', title='Регистрация',
+                                   form=form, password_error="OK", password_again_error="OK",
+                                   email_error="OK", nickname_error="OK",
+                                   age_error='Этот сайт предназначен для совершеннолетних лиц')
+        if form.gender.data == '0':
+            gender = "Мужской"
+        else:
+            gender = "Женский"
         user = users.User(
+            nickname=form.nickname.data,
             name=form.name.data,
+            secondname=form.secondname.data,
             email=form.email.data,
-            password=form.password.data
+            password=form.password.data,
+            age=form.age.data,
+            gender=gender,
         )
         sessions.add(user)
         sessions.commit()
         return redirect('/login')
-    return render_template('register.html', title='Регистрация', form=form)
+    return render_template('register.html', title='Регистрация', email_error="OK",
+                           password_error="OK", nickname_error="OK", age_error='OK',
+                           password_again_error="OK", form=form)
+
+
+def password(password):
+    try:
+        if len(password) < 8:
+            raise LenError
+        f1 = 0
+        f2 = 0
+        for i in password:
+            if i in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']:
+                f1 = 1
+            if i.lower() in 'qwertyuiopasdfghjklzxcvbnm':
+                f2 = 1
+        if not f1:
+            raise DigitError
+        if not f2:
+            raise AlphabetError
+        return 'OK'
+    except (LenError, AlphabetError, DigitError) as ex:
+        return ex.error
+
+
+class LenError(Exception):
+    error = 'Пароль должен состоять не менее чем из 8 символов!'
+
+
+class AlphabetError(Exception):
+    error = 'В пароле должна быть хотя бы одна буква!'
+
+
+class DigitError(Exception):
+    error = 'В пароле должна быть хотя бы одна цифра!'
 
 
 def main():

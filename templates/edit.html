@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main" class="container">
+    <h1>Изменение автомобиля</h1>
+    <form class="mt-4 " action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+            {{ form.title.label }} <br>
+            {{ form.title(class="form-control") }} <br>
+            {% for error in form.title.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.content.label }} <br>
+            {{ form.content(class="form-control") }} <br>
+            {% for error in form.content.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.price.label }} <br>
+            {{ form.price(class="form-control") }} <br>
+            {% for error in form.price.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.maxspeed.label }} <br>
+            {{ form.maxspeed(class="form-control") }} <br>
+            {% for error in form.maxspeed.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.boost.label }} <br>
+            {{ form.boost(class="form-control") }} <br>
+            {% for error in form.boost.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.power.label }} <br>
+            {{ form.power(class="form-control") }} <br>
+            {% for error in form.power.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.powerdensity.label }} <br>
+            {{ form.powerdensity(class="form-control") }} <br>
+            {% for error in form.powerdensity.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.size.label }} <br>
+            {{ form.size(class="form-control") }} <br>
+            {% for error in form.size.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.weight.label }} <br>
+            {{ form.weight(class="form-control") }} <br>
+            {% for error in form.weight.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        {{ message }}
+    </form>
+</main>
+{% endblock %}

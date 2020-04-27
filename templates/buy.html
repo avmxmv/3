@@ -19,12 +19,13 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                      aria-labelledby="list-home-list">
-                    <h2 class="text-center mb-5">Проверьте пожалуйста выбранную модель</h2>
+                    <h2 class="text-center mb-2">Проверьте пожалуйста выбранную модель</h2>
                     <h3>Вами выбран автомобиль: {{item.title}}</h3>
+                    <h3>Его цена: {{item.price}} руб</h3>
                 </div>
                 <div class="tab-pane fade" id="list-profile" role="tabpanel"
                      aria-labelledby="list-profile-list">
-                    <h3 class="text-center mb-5">Выберите пункт доставки автомобиля</h3>
+                    <h3 class="text-center mb-3">Выберите пункт доставки автомобиля</h3>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="exampleRadios"
                                id="exampleRadios1" value="option1" checked>
@@ -58,7 +59,8 @@
                 </div>
                 <div class="tab-pane fade" id="list-messages" role="tabpanel"
                      aria-labelledby="list-messages-list">
-                    <h2 class="text-center mb-4">Оплата</h2>
+                    <h4 class="text-center mb-4">Вы должны оплатить 10% от стоимости автомобиля</h4>
+                    <h5 class="mb-2 ml-3">Итог: {{item.price * 0.01}} руб</h5>
                     <div class="col-auto">
                         <label class="sr-only" for="inlineFormInputGroup">Имя пользователя</label>
                         <div class="input-group mb-2">
@@ -82,6 +84,7 @@
                             <input type="text" class="form-control" id="inlineFormInputGroup3"
                                    placeholder="000">
                         </div>
+                        <a href="/end" class="btn btn-outline-danger mt-2">Оплата</a>
                     </div>
                 </div>
             </div>
