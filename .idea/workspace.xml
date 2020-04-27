@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="18 commit">
-      <change afterPath="$PROJECT_DIR$/static/style/application.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/end.html" afterDir="false" />
+    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/photo/standart-avatar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APItest.py" beforeDir="false" afterPath="$PROJECT_DIR$/APItest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/RegisterForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/loginForm.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587944985440</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20 commit">
+      <created>1588002215015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588002215015</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,33 +133,34 @@
     <MESSAGE value="16 commit" />
     <MESSAGE value="17 commit" />
     <MESSAGE value="18 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="18 commit" />
+    <MESSAGE value="20 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="20 commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1067" y="88" key="CommitChangelistDialog2" timestamp="1587977044012">
+    <state x="1067" y="88" key="CommitChangelistDialog2" timestamp="1588002213110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1067" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587977044012" />
+    <state x="1067" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588002213110" />
     <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1587980005866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587980005866" />
-    <state width="1153" height="153" key="GridCell.Tab.0.bottom" timestamp="1588001914789">
+    <state width="1102" height="153" key="GridCell.Tab.0.bottom" timestamp="1588008222693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1153" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588001914789" />
-    <state width="1153" height="153" key="GridCell.Tab.0.center" timestamp="1588001914789">
+    <state width="1102" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588008222693" />
+    <state width="1102" height="153" key="GridCell.Tab.0.center" timestamp="1588008222693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1153" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588001914789" />
-    <state width="1153" height="153" key="GridCell.Tab.0.left" timestamp="1588001914789">
+    <state width="1102" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588008222693" />
+    <state width="1102" height="153" key="GridCell.Tab.0.left" timestamp="1588008222693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1153" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588001914789" />
-    <state width="1153" height="153" key="GridCell.Tab.0.right" timestamp="1588001914789">
+    <state width="1102" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588008222693" />
+    <state width="1102" height="153" key="GridCell.Tab.0.right" timestamp="1588008222693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1153" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588001914789" />
+    <state width="1102" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588008222693" />
     <state x="368" y="85" key="MergeDialog" timestamp="1587841129775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,9 +169,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1328" y="387" width="389" height="265" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587841129779" />
-    <state x="1032" y="252" key="Vcs.Push.Dialog.v2" timestamp="1587849196538">
+    <state x="1118" y="239" key="VCS.ChangeListViewerDialog" timestamp="1588002255871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1032" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587849196538" />
+    <state x="1118" y="239" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588002255871" />
+    <state x="1032" y="252" key="Vcs.Push.Dialog.v2" timestamp="1588002227363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588002227363" />
   </component>
 </project>

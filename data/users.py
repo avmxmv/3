@@ -17,5 +17,6 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     secondname = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     age = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
+    photo = sqlalchemy.Column(sqlalchemy.VARCHAR, nullable=True, default='/static/photo/standart-avatar.png')
     gender = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     items = orm.relation('Items', back_populates='user')
