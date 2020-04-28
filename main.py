@@ -264,7 +264,7 @@ def reqister():
 def password(password):
     try:
         if len(password) < 8:
-            raise LenError
+            raise LenEr
         f1 = 0
         f2 = 0
         for i in password:
@@ -273,24 +273,24 @@ def password(password):
             if i.lower() in 'qwertyuiopasdfghjklzxcvbnm':
                 f2 = 1
         if not f1:
-            raise DigitError
+            raise DigitEr
         if not f2:
-            raise AlphabetError
+            raise AlphabetEr
         return 'OK'
-    except (LenError, AlphabetError, DigitError) as ex:
+    except (LenEr, AlphabetEr, DigitEr) as ex:
         return ex.error
 
 
-class LenError(Exception):
-    error = 'Пароль должен состоять не менее чем из 8 символов!'
+class LenEr(Exception):
+    error = 'Длинна пароля должена быть более 7 символов!'
 
 
-class AlphabetError(Exception):
-    error = 'В пароле должна быть хотя бы одна буква!'
+class AlphabetEr(Exception):
+    error = 'В пароле должна быть хотя бы одна латинская буква!'
 
 
-class DigitError(Exception):
-    error = 'В пароле должна быть хотя бы одна цифра!'
+class DigitEr(Exception):
+    error = 'В пароле должна быть хотя бы одна арабская цифра!'
 
 
 def main():
