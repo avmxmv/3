@@ -3,10 +3,10 @@ from flask_login import LoginManager, login_user, logout_user, login_required
 from flask_wtf import FlaskForm
 from flask_restful import Api
 from wtforms import IntegerField
-from wtforms import SelectField, StringField, PasswordField, SubmitField, TextAreaField, \
+from wtforms import SelectField, StringField, PasswordField, SubmitField, \
+    TextAreaField, \
     BooleanField
 from wtforms.validators import DataRequired
-
 from data import db_session, items, users
 from api_item import ItemListResource, ItemResource
 
@@ -27,12 +27,14 @@ def load_user(user_id):
 class RegisterForm(FlaskForm):
     email = StringField('Почта', validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
-    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])
+    password_again = PasswordField('Повторите пароль',
+                                   validators=[DataRequired()])
     nickname = StringField('Имя пользователя', validators=[DataRequired()])
     name = StringField('Имя', validators=[DataRequired()])
     secondname = StringField('Фамилия', validators=[DataRequired()])
     age = StringField('Возраст', validators=[DataRequired()])
-    gender = SelectField("Пол", validators=[DataRequired()], choices=[('0', 'М'), ('1', "Ж")])
+    gender = SelectField("Пол", validators=[DataRequired()],
+                         choices=[('0', 'М'), ('1', "Ж")])
     submit = SubmitField('Зарегистрироваться')
 
 
@@ -100,7 +102,8 @@ def add_items():
             sessions.add(item)
             sessions.commit()
             return redirect('/cars')
-    return render_template('items.html', title='Добавление автомобиля', form=form)
+    return render_template('items.html', title='Добавление автомобиля',
+                           form=form)
 
 
 @app.route('/items_delete/<int:id>', methods=['GET', 'POST'])
@@ -152,7 +155,8 @@ def edit_items(id):
             return redirect('/cars')
         else:
             abort(404)
-    return render_template('edit.html', title='Редактирование автомобиля', form=form)
+    return render_template('edit.html', title='Редактирование автомобиля',
+                           form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -160,11 +164,14 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         sessions = db_session.create_session()
-        user = sessions.query(users.User).filter(users.User.email == form.email.data).first()
+        user = sessions.query(users.User).filter(
+            users.User.email == form.email.data).first()
         if user and user.password == form.password.data:
             login_user(user, remember=form.remember_me.data)
             return redirect('/')
-        return render_template('login.html', message='Неправильный логин или пароль', form=form)
+        return render_template('login.html',
+                               message='Неправильный логин или пароль',
+                               form=form)
     return render_template('login.html', title='Авторизация', form=form)
 
 
@@ -215,31 +222,41 @@ def reqister():
         if f != 'OK':
             return render_template('register.html',
                                    title='Регистрация',
-                                   form=form, email_error="OK", nickname_error="OK",
+                                   form=form, email_error="OK",
+                                   nickname_error="OK",
                                    password_again_error="OK",
                                    password_error=f, age_error='OK')
         if form.password.data != form.password_again.data:
             return render_template('register.html', title='Регистрация',
-                                   form=form, email_error="OK", nickname_error="OK",
+                                   form=form, email_error="OK",
+                                   nickname_error="OK",
                                    password_error="OK",
-                                   password_again_error="Пароли не совпадают", age_error='OK')
+                                   password_again_error="Пароли не совпадают",
+                                   age_error='OK')
         db_session.global_init('db/blogs.sqlite')
         sessions = db_session.create_session()
-        if sessions.query(users.User).filter(users.User.email == form.email.data).first():
+        if sessions.query(users.User).filter(
+                users.User.email == form.email.data).first():
             return render_template('register.html', title='Регистрация',
-                                   form=form, password_error="OK", nickname_error="OK",
+                                   form=form, password_error="OK",
+                                   nickname_error="OK",
                                    again_password_error="OK",
                                    email_error="Такой пользователь уже есть")
-        if sessions.query(users.User).filter(users.User.nickname == form.nickname.data).first():
+        if sessions.query(users.User).filter(
+                users.User.nickname == form.nickname.data).first():
             return render_template('register.html', title='Регистрация',
-                                   form=form, password_error="OK", password_again_error="OK",
-                                   nickname_error="Данное имя пользователя уже занято",
+                                   form=form, password_error="OK",
+                                   password_again_error="OK",
+                                   nickname_error="Данное имя пользователя "
+                                                  "уже занято",
                                    email_error="OK", age_error='OK')
         if int(form.age.data) < 18:
             return render_template('register.html', title='Регистрация',
-                                   form=form, password_error="OK", password_again_error="OK",
+                                   form=form, password_error="OK",
+                                   password_again_error="OK",
                                    email_error="OK", nickname_error="OK",
-                                   age_error='Этот сайт предназначен для совершеннолетних лиц')
+                                   age_error='Этот сайт предназначен для '
+                                             'совершеннолетних лиц')
         if form.gender.data == '0':
             gender = "Мужской"
         else:
@@ -256,8 +273,10 @@ def reqister():
         sessions.add(user)
         sessions.commit()
         return redirect('/login')
-    return render_template('register.html', title='Регистрация', email_error="OK",
-                           password_error="OK", nickname_error="OK", age_error='OK',
+    return render_template('register.html', title='Регистрация',
+                           email_error="OK",
+                           password_error="OK", nickname_error="OK",
+                           age_error='OK',
                            password_again_error="OK", form=form)
 
 
