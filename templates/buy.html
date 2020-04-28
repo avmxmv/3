@@ -9,10 +9,12 @@
                    data-toggle="list" href="#list-home" role="tab" aria-controls="home">Info about
                     the car</a>
                 <a class="list-group-item list-group-item-action" id="list-profile-list"
-                   data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Point of
+                   data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Point
+                    of
                     receiving</a>
                 <a class="list-group-item list-group-item-action" id="list-messages-list"
-                   data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Payment</a>
+                   data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">
+                    Payment</a>
             </div>
         </div>
         <div class="col-8">
@@ -62,27 +64,33 @@
                     <h4 class="text-center mb-4">Вы должны оплатить 10% от стоимости автомобиля</h4>
                     <h5 class="mb-2 ml-3">Итог: {{item.price * 0.01}} руб</h5>
                     <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Имя пользователя</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">Номер карты</div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup1"
+                        <div id="wrapper">
+                            <img src="/static/photo/card.jpg" width="600" height="273" alt="">
+                            <input type="text" class="form-control"
+                                   style="position: absolute; top: 99px; left: 38px;
+                                   height: 46px; width: 377px;"
+                                   id="inlineFormInputGroup1 img"
                                    placeholder="0000-0000-0000-0000">
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">Срок действия карты</div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup2"
-                                   placeholder="00/00">
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">Код проверки подлинности карты</div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup3"
+                            <input type="text" class="form-control"
+                                   style="position: absolute; top: 165px; left: 130px;
+                                   height: 23px; width: 95px;"
+                                   id="inlineFormInputGroup2 img1"
+                                   placeholder="00">
+                            <input type="text" class="form-control"
+                                   style="position: absolute; top: 165px; left: 236px;
+                                   height: 23px; width: 95px;"
+                                   id="inlineFormInputGroup3 img2"
+                                   placeholder="00">
+                            <input type="text" class="form-control"
+                                   style="position: absolute; top: 98px; left: 535px;
+                                   height: 38px; width: 60px;"
+                                   id="inlineFormInputGroup4 img3"
                                    placeholder="000">
+                            <input type="text" class="form-control"
+                                   style="position: absolute; top: 203px; left: 130px;
+                                   height: 40px; width: 285px;"
+                                   id="inlineFormInputGroup5 img4"
+                                   placeholder="Aleksandr Maksimov">
                         </div>
                         <a href="/end" class="btn btn-outline-danger mt-2">Оплата</a>
                     </div>

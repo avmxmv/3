@@ -18,3 +18,33 @@ body {
 .footer {
    flex-shrink: 0;
 }
+div#wrapper {
+  position: relative;
+  width: 400px;
+  height: 200px;
+}
+#img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#img1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#img3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#img4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

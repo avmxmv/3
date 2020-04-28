@@ -207,13 +207,6 @@ def buy(id):
     return render_template("buy.html", item=item)
 
 
-class ChangePasswordForm(FlaskForm):
-    old_password = PasswordField('Старый пароль', validators=[DataRequired()])
-    new_password = PasswordField('Новый пароль', validators=[DataRequired()])
-    again_password = PasswordField('Повторите новый пароль', validators=[DataRequired()])
-    submit = SubmitField('Сменить пароль')
-
-
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     form = RegisterForm()
