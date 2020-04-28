@@ -277,8 +277,8 @@ def password(password):
         if not f2:
             raise AlphabetEr
         return 'OK'
-    except (LenEr, AlphabetEr, DigitEr) as ex:
-        return ex.error
+    except (LenEr, AlphabetEr, DigitEr) as e:
+        return e.error
 
 
 class LenEr(Exception):
