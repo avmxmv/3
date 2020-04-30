@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="24 commit">
+      <change afterPath="$PROJECT_DIR$/templates/password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APItest.py" beforeDir="false" afterPath="$PROJECT_DIR$/APItest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -32,8 +40,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_project-master" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3-master" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -43,7 +51,28 @@
       <recent name="C:\Users\alexa\Desktop\3.1\static\photo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="3.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="3.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,6 +97,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.1" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588072035833</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="24 commit">
+      <created>1588073198824</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588073198824</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,30 +206,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="24 commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1067" y="88" key="CommitChangelistDialog2" timestamp="1588072034436">
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588279820616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1067" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588072034436" />
-    <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1587980005866">
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588279820616" />
+    <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1588225184254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587980005866" />
-    <state width="936" height="153" key="GridCell.Tab.0.bottom" timestamp="1588071718041">
+    <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588225184254" />
+    <state width="938" height="153" key="GridCell.Tab.0.bottom" timestamp="1588279561590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588071718041" />
-    <state width="936" height="153" key="GridCell.Tab.0.center" timestamp="1588071718041">
+    <state width="938" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
+    <state width="938" height="153" key="GridCell.Tab.0.center" timestamp="1588279561590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588071718041" />
-    <state width="936" height="153" key="GridCell.Tab.0.left" timestamp="1588071718041">
+    <state width="938" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
+    <state width="938" height="153" key="GridCell.Tab.0.left" timestamp="1588279561590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588071718041" />
-    <state width="936" height="153" key="GridCell.Tab.0.right" timestamp="1588071718041">
+    <state width="938" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
+    <state width="938" height="153" key="GridCell.Tab.0.right" timestamp="1588279561590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588071718041" />
+    <state width="938" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
     <state x="368" y="85" key="MergeDialog" timestamp="1587841129775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,10 +238,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1328" y="387" width="389" height="265" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587841129779" />
-    <state x="552" y="305" key="SettingsEditor" timestamp="1588073168815">
+    <state x="552" y="305" key="SettingsEditor" timestamp="1588153049839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="305" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588073168815" />
+    <state x="552" y="305" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588153049839" />
     <state x="1118" y="239" key="VCS.ChangeListViewerDialog" timestamp="1588002255871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

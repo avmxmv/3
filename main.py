@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, abort
-from flask_login import LoginManager, login_user, logout_user, login_required
+from flask_login import LoginManager, login_user, logout_user, login_required,\
+    current_user
 from flask_wtf import FlaskForm
 from flask_restful import Api
 from wtforms import IntegerField
@@ -69,6 +70,14 @@ class EditItemsForm(FlaskForm):
     size = TextAreaField('Объём двигателя см³')
     weight = IntegerField('Вес автомобиля кг')
     submit = SubmitField('Изменить')
+
+
+class PasswordForm(FlaskForm):
+    password = PasswordField('Старый пароль', validators=[DataRequired()])
+    new_password = PasswordField('Новый пароль', validators=[DataRequired()])
+    new1_password = PasswordField('Повторите новый пароль',
+                                  validators=[DataRequired()])
+    submit = SubmitField('Сменить пароль')
 
 
 @app.route('/logout')
@@ -218,14 +227,14 @@ def buy(id):
 def reqister():
     form = RegisterForm()
     if form.validate_on_submit():
-        f = password(form.password.data)
-        if f != 'OK':
+        flag = password(form.password.data)
+        if flag != 'OK':
             return render_template('register.html',
                                    title='Регистрация',
                                    form=form, email_error="OK",
                                    nickname_error="OK",
                                    password_again_error="OK",
-                                   password_error=f, age_error='OK')
+                                   password_error=flag, age_error='OK')
         if form.password.data != form.password_again.data:
             return render_template('register.html', title='Регистрация',
                                    form=form, email_error="OK",
@@ -310,6 +319,53 @@ class AlphabetEr(Exception):
 
 class DigitEr(Exception):
     error = 'В пароле должна быть хотя бы одна арабская цифра!'
+
+
+@app.route('/profil', methods=['GET', 'POST'])
+@login_required
+def profil():
+    form = RegisterForm()
+    return render_template('profil.html', title='Профиль',
+                           form=form)
+
+
+@app.route('/password', methods=['GET', "POST"])
+@login_required
+def replace_password():
+    form = PasswordForm()
+    if form.validate_on_submit():
+        db_session.global_init('db/blogs.sqlite')
+        session = db_session.create_session()
+        user = session.query(users.User).get(current_user.id)
+        if user.password != form.password.data:
+            return render_template('password.html', form=form,
+                                   password_error="Неверный пароль",
+                                   new_password_error="OK",
+                                   new1_password_error="OK")
+        flag = password(form.new_password.data)
+        if user.password == form.new_password.data:
+            return render_template('password.html', form=form,
+                                   password_error="OK",
+                                   new_password_error="Новый пароль должен "
+                                                      "отличаться от старого",
+                                   new1_password_error="OK")
+        if flag != 'OK':
+            return render_template('password.html', form=form,
+                                   password_error="OK",
+                                   new_password_error=flag,
+                                   new1_password_error="OK")
+        if form.new_password.data != form.new1_password.data:
+            return render_template('change_password.html', form=form,
+                                   password_error="OK",
+                                   new_password_error="OK",
+                                   new1_password_error="Пароли не совпадают")
+        user.password = form.new_password.data
+        session.commit()
+        return redirect('/profil')
+    return render_template('password.html', form=form, title="Сменить пароль",
+                           password_error="OK",
+                           new_password_error="OK",
+                           new1_password_error="OK")
 
 
 def main():
