@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/edit_profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_profil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588279992275</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="27 commit">
+      <created>1588402885061</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588402885061</updated>
+    </task>
+    <task id="LOCAL-00014" summary="27.1 commit">
+      <created>1588402948717</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588402948717</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,7 +215,9 @@
     <MESSAGE value="23 commit" />
     <MESSAGE value="24 commit" />
     <MESSAGE value="26 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="26 commit" />
+    <MESSAGE value="27 commit" />
+    <MESSAGE value="27.1 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="27.1 commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588402883285">
