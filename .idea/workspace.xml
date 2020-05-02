@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="">
+    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="28 commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/3.1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1b2rBHdKGqVMqPl0uWkGRhiZD75" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -208,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588403045897</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="27.2 commit">
+      <created>1588439126892</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588439126893</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,30 +247,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="27.2 commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588403044531">
+    <state x="1204" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588444515662">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588403044531" />
+    <state x="1204" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588444515662" />
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588444788370">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588444788370" />
     <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1588225184254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588225184254" />
-    <state width="924" height="151" key="GridCell.Tab.0.bottom" timestamp="1588434622479">
+    <state width="590" height="151" key="GridCell.Tab.0.bottom" timestamp="1588444639949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="924" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588434622479" />
-    <state width="924" height="151" key="GridCell.Tab.0.center" timestamp="1588434622479">
+    <state width="590" height="151" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588444639949" />
+    <state width="590" height="151" key="GridCell.Tab.0.center" timestamp="1588444639949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="924" height="151" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588434622479" />
-    <state width="924" height="151" key="GridCell.Tab.0.left" timestamp="1588434622479">
+    <state width="590" height="151" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588444639949" />
+    <state width="590" height="151" key="GridCell.Tab.0.left" timestamp="1588444639949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="924" height="151" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588434622479" />
-    <state width="924" height="151" key="GridCell.Tab.0.right" timestamp="1588434622479">
+    <state width="590" height="151" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588444639949" />
+    <state width="590" height="151" key="GridCell.Tab.0.right" timestamp="1588444639949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="924" height="151" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588434622479" />
+    <state width="590" height="151" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588444639949" />
     <state x="368" y="85" key="MergeDialog" timestamp="1587841129775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
