@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="24 commit">
-      <change afterPath="$PROJECT_DIR$/templates/password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profil.html" afterDir="false" />
+    <list default="true" id="07d01a53-f902-428f-a7f6-68e550f099df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/edit_profil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blogs.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db/blogs.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588073198824</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="26 commit">
+      <created>1588279992275</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588279992275</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -203,33 +203,34 @@
     <MESSAGE value="22 commit" />
     <MESSAGE value="23 commit" />
     <MESSAGE value="24 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="24 commit" />
+    <MESSAGE value="26 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="26 commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588279820616">
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2" timestamp="1588279990437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588279820616" />
+    <state x="237" y="88" width="1575" height="865" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588279990437" />
     <state x="1220" y="274" key="FileChooserDialogImpl" timestamp="1588225184254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1220" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588225184254" />
-    <state width="938" height="153" key="GridCell.Tab.0.bottom" timestamp="1588279561590">
+    <state width="935" height="153" key="GridCell.Tab.0.bottom" timestamp="1588376075495">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
-    <state width="938" height="153" key="GridCell.Tab.0.center" timestamp="1588279561590">
+    <state width="935" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588376075495" />
+    <state width="935" height="153" key="GridCell.Tab.0.center" timestamp="1588376075494">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
-    <state width="938" height="153" key="GridCell.Tab.0.left" timestamp="1588279561590">
+    <state width="935" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588376075494" />
+    <state width="935" height="153" key="GridCell.Tab.0.left" timestamp="1588376075494">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
-    <state width="938" height="153" key="GridCell.Tab.0.right" timestamp="1588279561590">
+    <state width="935" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588376075494" />
+    <state width="935" height="153" key="GridCell.Tab.0.right" timestamp="1588376075494">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588279561590" />
+    <state width="935" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588376075494" />
     <state x="368" y="85" key="MergeDialog" timestamp="1587841129775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

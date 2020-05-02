@@ -329,6 +329,39 @@ def profil():
                            form=form)
 
 
+@app.route('/edit_profil', methods=['GET', 'POST'])
+@login_required
+def edit_profil():
+    form = RegisterForm()
+    db_session.global_init('db/blogs.sqlite')
+    session = db_session.create_session()
+    user = session.query(users.User).get(current_user.id)
+    if request.method == 'GET':
+        form.name.data = user.name
+        form.secondname.data = user.secondname
+        form.nickname.data = user.nickname
+        form.age.data = user.age
+        if user.gender == 'Мужской':
+            gender = '0'
+        else:
+            gender = '1'
+        form.gender.data = gender
+    elif request.method == 'POST':
+        user.name = form.name.data
+        user.secondname = form.secondname.data
+        form.nickname.data = user.nickname
+        user.age = form.age.data
+        if form.gender.data == '0':
+            gender = "Мужской"
+        else:
+            gender = "Женский"
+        user.gender = gender
+        session.commit()
+        return redirect('/profil')
+    return render_template('edit_profil.html', form=form,
+                            title='Редактирование')
+
+
 @app.route('/password', methods=['GET', "POST"])
 @login_required
 def replace_password():

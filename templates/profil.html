@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container mt-3">
-    <h1 class="text-center mb-4">Профиль</h1>
+    <h1 class="text-center mb-4">Профиль {{current_user.nickname}}</h1>
     <div class="row">
         <div class="col-3">
             <img height="350px" width="350px" src="{{current_user.photo}}" alt="">
@@ -11,6 +11,7 @@
             <div class="mt-5 mb-1">{{current_user.gender}}</div>
             <div>{{current_user.age}} лет(год)</div>
             <div class="mt-5">
+                <a href="/edit_profil" class="btn btn-outline-info mr-5">Редактировать профиль</a>
                 <a href="/password" class="btn btn-outline-success mr-5">Сменить пароль</a>
                 <a href="/logout" class="btn btn-outline-danger">Выйти</a>
             </div>
