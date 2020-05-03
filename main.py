@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, abort
-from flask_login import LoginManager, login_user, logout_user, login_required,\
-    current_user
+from flask_login import LoginManager, login_user, logout_user, \
+    login_required, current_user
 from flask_wtf import FlaskForm
 from flask_restful import Api
 from wtforms import IntegerField
@@ -10,6 +10,7 @@ from wtforms import SelectField, StringField, PasswordField, SubmitField, \
 from wtforms.validators import DataRequired
 from data import db_session, items, users
 from api_item import ItemListResource, ItemResource
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
@@ -221,7 +222,48 @@ def info_cars(id):
 def buy(id):
     sessions = db_session.create_session()
     item = sessions.query(items.Items).get(id)
-    return render_template("buy.html", item=item)
+    try:
+        if request.method == 'POST':
+            number_card = request.form.get('card')
+            result_card_number = alg_luna(number_card)
+            cvv = request.form.get('cvv')
+            username = request.form.get('name')
+            month = request.form.get('month')
+            year = request.form.get('year')
+            if not (cvv or username or month or year):
+                return render_template("buy.html", error='Некорректные данные',
+                                       card_error='OK',
+                                       item=item)
+            if result_card_number != 'OK':
+                return render_template('buy.html',
+                                       card_error=result_card_number,
+                                       error='OK',
+                                       item=item)
+            return redirect('/end')
+        return render_template("buy.html", error='OK',
+                               card_error='OK',
+                               item=item)
+    except Exception:
+        return render_template("buy.html", error='Некорректные данные',
+                               card_error='OK',
+                               item=item)
+
+
+def alg_luna(number_card):
+    summ, summ2 = 0, 0
+    number_card = ''.join(''.join(number_card.split()).split('-'))[::-1]
+    if number_card.isdigit():
+        for i in range(1, len(number_card) + 1):
+            if i % 2 == 0:
+                summ2 = int(number_card[i - 1]) * 2
+                if summ2 > 9:
+                    summ2 = summ2 % 10 + summ2 // 10
+                summ += summ2
+            else:
+                summ += int(number_card[i - 1])
+    if summ % 10 or len(number_card) != 16:
+        return 'Номер карты введен некорректно'
+    return 'OK'
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -360,7 +402,7 @@ def edit_profil():
         session.commit()
         return redirect('/profil')
     return render_template('edit_profil.html', form=form,
-                            title='Редактирование')
+                           title='Редактирование')
 
 
 @app.route('/password', methods=['GET', "POST"])

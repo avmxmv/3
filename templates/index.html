@@ -17,8 +17,8 @@
         {% if search in item.title.lower() %}
         {% if vars.update({'flag': False}) %} {% endif %}
         <div class="col-sm-6">
-            <div class="card mb-4" style="width: 30rem; border-radius: 10px;">
-                <a href="http://127.0.0.1:5000/info_cars/{{ item.id }}">
+            <div class="card mb-4" style="width: 100%; border-radius: 10px;">
+                <a href="info_cars/{{ item.id }}">
                 <img class="img-fluid" style="border-radius: 10px;" src={{item.photo}}>
                 </a>
                 <div class="card-body">
