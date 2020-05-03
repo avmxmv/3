@@ -404,6 +404,7 @@ def replace_password():
 def main():
     global number
     db_session.global_init("db/blogs.sqlite")
+    app = Flask(__name__)
     sessions = db_session.create_session()
     api.add_resource(ItemListResource, '/api/v2/item')
     api.add_resource(ItemResource, '/api/v2/item/<int:item_id>')
